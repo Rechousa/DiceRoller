@@ -7,6 +7,9 @@ import androidx.appcompat.app.AppCompatActivity
 import java.util.*
 
 class MainActivity : AppCompatActivity() {
+    
+    private lateinit var resultText: TextView
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
@@ -18,10 +21,9 @@ class MainActivity : AppCompatActivity() {
     }
 
     private fun rollDice() {
-        val resultText: TextView = findViewById(R.id.result_text)
+        resultText = findViewById(R.id.result_text)
 
         val randomInt = Random().nextInt(6) + 1
-
         resultText.text = randomInt.toString()
     }
 }
