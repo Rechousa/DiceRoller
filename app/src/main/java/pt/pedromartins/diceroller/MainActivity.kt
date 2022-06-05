@@ -2,6 +2,7 @@ package pt.pedromartins.diceroller
 
 import android.os.Bundle
 import android.widget.Button
+import android.widget.TextView
 import androidx.appcompat.app.AppCompatActivity
 
 class MainActivity : AppCompatActivity() {
@@ -10,6 +11,13 @@ class MainActivity : AppCompatActivity() {
         setContentView(R.layout.activity_main)
 
         val rollButton: Button = findViewById(R.id.roll_button)
-        rollButton.text = "Let's Roll"
+        rollButton.setOnClickListener {
+            rollDice()
+        }
+    }
+
+    private fun rollDice() {
+        val resultText: TextView = findViewById(R.id.result_text)
+        resultText.text = "Dice Rolled!"
     }
 }
